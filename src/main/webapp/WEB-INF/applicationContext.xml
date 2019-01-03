@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+	<bean class="com.test.springinvokescamel.CamelCaller"
+		factory-method="getInstance" id="camelCaller" />
+	<camelContext
+		id="camelContext-b793f92d-35de-4a88-9789-c4c7f010e847"
+		xmlns="http://camel.apache.org/schema/spring">
+		<route>
+			<from uri="direct:testapp"></from>
+			<log message="hola!!!" />
+		</route>
+	</camelContext>
+
+</beans>
